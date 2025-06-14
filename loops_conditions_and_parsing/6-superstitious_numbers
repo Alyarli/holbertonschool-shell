@@ -4,13 +4,13 @@ i=1
 while [ $i -le 20 ];do
 	echo $i
 	case "$i" in
-		i4)
+		4)
 			echo "bad luck from China"
 			;;
-		i9)
+		9)
 			echo "bad luck from Japan"
 			;;
-		i17)
+		17)
 			echo "bad luck from Italy"
 			;;
 	esac
