@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 #Vq is important
 echo "Hour: 0"
-i=0	
+i=0
+b=0
 while true;do
 	((i++))
 	echo $i
 	if [ $(( i/60 )) -eq 1 ];then
-		echo "Hour: $(( i/60 ))"
+		b=$(( b + i/60 ))
+		echo "Hour: $b"
 		i=$(( i%60 ))
 	fi
 done
+cat 7-clock.txt | head -n 70
