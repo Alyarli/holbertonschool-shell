@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Vq is important
-if [ $school file in * ];then
+if [ -f $school ];then
 	echo "school file exists"
 	if [ -s $school ];then
 		echo "school file is not empty"
