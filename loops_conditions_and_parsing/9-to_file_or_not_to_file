@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 #Vq is important
-if [ $School file in * ];then
+if [ $school file in * ];then
 	echo "school file exists"
-	if [ -s $School ];then
+	if [ -s $school ];then
 		echo "school file is not empty"
 	else
 		echo "school file is empty"
 	fi
-	if [ -f $School ];then
+	if [ -f $school ];then
 		echo "school is a regular file"
 	fi
 else
