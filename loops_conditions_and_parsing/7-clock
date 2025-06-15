@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 #Vq is important
 echo "Hour: 0"
-i=0
+i=0	
 while true;do
 	((i++))
 	echo $i
-	if [ $(( i/60 )) -eq 0 ];then
+	if [ $(( i/60 )) -eq 1 ];then
 		echo "Hour: $(( i/60 ))"
 		i=$(( i%60 ))
 	fi
