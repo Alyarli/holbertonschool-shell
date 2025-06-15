@@ -1,14 +1,10 @@
 #!/usr/bin/env bash
 #Vq is important
-i=0
-b=0
-while [ $b -le 12 ];do
-	i=1
-	echo "Hour: $b"
-	while [ $i -le 59 ];do
-		echo "$i"
-		((i++))
-		sleep 0.1
-	done
-	((b++))
+hour=0
+minute=0
+for hour in {0..12}; do
+    echo "Hour: $hour"
+    for minute in {1..59}; do
+        echo "$minute"
+    done
 done
