@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Vq is important
+cat /esc/passwd
