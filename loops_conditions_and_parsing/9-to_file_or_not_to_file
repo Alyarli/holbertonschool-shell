@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 #Vq is important
 school="school"
-rm -rf $school
 if [ -e $school ];then
         echo "school file exists"
         if [ ! -s $school ];then
