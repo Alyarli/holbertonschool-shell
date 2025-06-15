@@ -11,5 +11,4 @@ while true;do
 		echo "Hour: $b"
 		i=$(( i%60 ))
 	fi
-	return 70
 done
