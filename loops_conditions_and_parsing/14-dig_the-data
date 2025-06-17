@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 #vq
-awk '{print $1, $9}'  apache-access.log | sort | uniq -c | sort
+awk '{print $1, $9}'  apache-access.log | sort | uniq -c | sort -r
