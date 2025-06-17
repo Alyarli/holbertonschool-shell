@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 #Vq is important
-while IFS=':' read -r username _ uid _ _ home;do
+while IFS=':' read -r username _ uid _ _ home_;do
 	echo "$username:$uid:$home"
 done < /etc/passwd
