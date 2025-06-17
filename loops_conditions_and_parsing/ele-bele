@@ -1,0 +1,74 @@
+#ChatGPT said:
+Əlbəttə! Gəlin awk '{ print $1, $9 }' apache-access.log əmri və oradakı $1 və $9 dəyişənlərinin haradan gəldiyini, nə mənaya sahib olduğunu addım-addım izah edim.
+
+1. awk nə edir?
+awk — mətn emal edən proqramdır. O, fayldakı hər bir sətri oxuyur, onu sütunlara ayırır və həmin sütunlara $1, $2, $3, … kimi müraciət edir.
+
+$0 — bütün sətiri göstərir.
+
+$1 — sətirin birinci sütunu (birinci sahəsi).
+
+$2 — ikinci sütun və s.
+
+2. Log faylındakı sətirlər necədir?
+Apache access log faylı belə tipik görünür:
+
+swift
+Copy
+Edit
+185.130.5.207 - - [17/Jun/2025:10:00:00 +0000] "GET /index.html HTTP/1.1" 200 1024
+Bu sətirdəki sahələri boşluq simvolu (space) ayırır.
+
+Sütunlar:
+
+Sütun nömrəsi	Dəyər	İzah
+$1	185.130.5.207	Ziyarətçinin IP ünvanı
+$2	-	(Məsələn, identifikator)
+$3	-	(Məsələn, istifadəçi adı, əgər varsa)
+$4	[17/Jun/2025:10:00:00	Sorğunun başlama vaxtı (tarix saat)
+$5	+0000]	Vaxt zonasını göstərir
+$6	"GET	Sorğunun HTTP metodu
+$7	/index.html	Sorğunun URL ünvanı
+$8	HTTP/1.1"	HTTP protokolu və versiyası
+$9	200	HTTP status kodu (məsələn, 200 OK)
+$10	1024	Serverin göndərdiyi bayt sayı
+
+3. Niyə $1 və $9?
+$1 — ziyarətçinin IP ünvanıdır, hansı ki, istədiyimiz əsas məlumatdır.
+
+$9 — HTTP status kodudur, serverin ziyarətçiyə necə cavab verdiyini göstərir (məsələn, 200, 404, 301).
+
+4. awk '{ print $1, $9 }' apache-access.log nə edir?
+Hər sətri oxuyur,
+
+Sətiri boşluqlara görə sütunlara bölür,
+
+Birinci sütundakı IP və doqqununcu sütundakı HTTP status kodunu götürüb ekrana çap edir,
+
+Nəticədə belə bir siyahı alınır:
+
+python-repl
+Copy
+Edit
+185.130.5.207 200
+192.168.1.1 404
+...
+5. Qısa xülasə
+$1 — Apache logundakı ilk boşluqla ayrılmış sahə, yəni IP.
+
+$9 — HTTP status kodu.
+
+awk isə sadəcə sətiri sütunlara bölüb, lazım olan hissələri çap edir.
+
+Əlavə
+Əgər log formatında fərq varsa (məsələn, sahələr başqa cür ayrılıbsa), o zaman awk-ın sahə ayırıcı parametri -F ilə dəyişdirilə bilər.
+
+Sualın varsa, izah etməyə davam ed!
+
+
+
+
+
+
+chatgptye bunu atdim:awk '{ print $1, $9 }' apache-access.log
+burdaki $1 ve $9un goturulduyu siyahini ve onun niiye ele oldugunu detayli sekilde izah ede bilersen
